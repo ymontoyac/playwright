@@ -1,0 +1,30 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npm run lint && playwright test",
+    "test:normal": "npm run lint && cross-env HEADLESS=false playwright test",
+    "test:parallel": "npm run lint && cross-env HEADLESS=true playwright test --workers=50%",
+    "test:headless": "npm run lint && cross-env HEADLESS=true playwright test",
+    "test:debug": "npm run lint && cross-env PWDEBUG=1 HEADLESS=false playwright test --workers=1",
+    "test:ci": "npm run lint && cross-env CI=true HEADLESS=true playwright test --reporter=line",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "Playwright TypeScript POC with POM pattern",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.38.0",
+    "eslint-plugin-playwright": "^2.3.0",
+    "typescript": "^5.9.3"
+  }
+}

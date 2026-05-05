@@ -24,6 +24,7 @@ module.exports = [
       ...tsPlugin.configs['recommended-type-checked'].rules,
       ...playwright.configs.recommended.rules,
       'no-undef': 'off',
+      indent: ['error', 2, { SwitchCase: 1 }],
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/consistent-type-imports': [
         'error',

@@ -14,7 +14,7 @@ export default defineConfig({
   forbidOnly: isCI,
   retries: isCI ? 1 : 0,
   ...(isCI && { workers: 2 }),
-  reporter: 'line',
+  reporter: 'html',
   use: {
     baseURL: process.env.BASE_URL ?? 'https://eventhub.rahulshettyacademy.com',
     browserName: 'chromium',
